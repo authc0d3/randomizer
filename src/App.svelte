@@ -7,32 +7,32 @@
 <Router>
   <Header />
   <main class="container">
-    <Route path="/">
+    <Route path="randomizer">
       <p>
         ¡Bienvenid@ a Randomizer! Selecciona la herramienta que deseas utilizar:
       </p>
       <div class="tools">
-        <Link to="roll-dice" class="btn btn-default btn-full"
+        <Link to="randomizer/roll-dice" class="btn btn-default btn-full"
           >🎲 Tirar un dado</Link
         >
-        <Link to="random-number" class="btn btn-default btn-full"
+        <Link to="randomizer/random-number" class="btn btn-default btn-full"
           >🔀 Generar número aleatorio</Link
         >
-        <Link to="raffle" class="btn btn-default btn-full"
+        <Link to="randomizer/raffle" class="btn btn-default btn-full"
           >🏆 Realizar sorteo</Link
         >
-        <Link to="/" class="btn btn-default btn-full btn-disabled"
+        <Link to="randomizer" class="btn btn-default btn-full btn-disabled"
           >👪 Generar grupos aleatorios (en desarrollo)</Link
         >
       </div>
     </Route>
-    <Route path="roll-dice">
+    <Route path="randomizer/roll-dice">
       <RollDice />
     </Route>
-    <Route path="random-number">
+    <Route path="randomizer/random-number">
       <RandomNumber />
     </Route>
-    <Route path="raffle">
+    <Route path="randomizer/raffle">
       <Raffle />
     </Route>
   </main>
