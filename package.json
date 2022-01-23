@@ -6,6 +6,7 @@
   },
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://authc0d3.github.io/randomizer/",
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
