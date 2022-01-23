@@ -3,6 +3,6 @@
 </script>
 
 <h2 class="page-title">
-  <Link to="randomizer">←</Link>{" "}
+  <Link to="/randomizer">←</Link>{" "}
   <slot />
 </h2>

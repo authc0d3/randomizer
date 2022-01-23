@@ -12,27 +12,27 @@
         ¡Bienvenid@ a Randomizer! Selecciona la herramienta que deseas utilizar:
       </p>
       <div class="tools">
-        <Link to="/roll-dice" class="btn btn-default btn-full"
+        <Link to="roll-dice" class="btn btn-default btn-full"
           >🎲 Tirar un dado</Link
         >
-        <Link to="/random-number" class="btn btn-default btn-full"
+        <Link to="random-number" class="btn btn-default btn-full"
           >🔀 Generar número aleatorio</Link
         >
-        <Link to="/raffle" class="btn btn-default btn-full"
+        <Link to="raffle" class="btn btn-default btn-full"
           >🏆 Realizar sorteo</Link
         >
-        <Link to="/" class="btn btn-default btn-full btn-disabled"
+        <Link to="/randomizer" class="btn btn-default btn-full btn-disabled"
           >👪 Generar grupos aleatorios (en desarrollo)</Link
         >
       </div>
     </Route>
-    <Route path="/roll-dice">
+    <Route path="roll-dice">
       <RollDice />
     </Route>
-    <Route path="/random-number">
+    <Route path="random-number">
       <RandomNumber />
     </Route>
-    <Route path="/raffle">
+    <Route path="raffle">
       <Raffle />
     </Route>
   </main>
