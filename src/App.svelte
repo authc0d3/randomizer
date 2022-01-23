@@ -26,13 +26,13 @@
         >
       </div>
     </Route>
-    <Route path="roll-dice">
+    <Route path="randomizer/roll-dice">
       <RollDice />
     </Route>
-    <Route path="random-number">
+    <Route path="randomizer/random-number">
       <RandomNumber />
     </Route>
-    <Route path="raffle">
+    <Route path="randomizer/raffle">
       <Raffle />
     </Route>
   </main>

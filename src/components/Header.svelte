@@ -13,7 +13,7 @@
   <div class="container">
     <h1 class="logo"><Link to="/randomizer">🎲 Randomizer</Link></h1>
     <nav>
-      {#if currentPath !== "/" && width > 640}
+      {#if currentPath !== "randomizer" && width > 640}
         <Link to="/randomizer" class="btn">🏠 Inicio</Link>
       {/if}
       <a href="https://programadorweb.dev" class="btn" target="_blank"
