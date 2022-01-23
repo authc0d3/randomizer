@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&family=Roboto:wght@300;400&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+body {
+  background-color: darkslategrey;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+.container {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 780px;
+}
+
+.btn {
+  background-color: transparent;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.btn:hover,
+.btn:focus,
+.btn:active {
+  border-color: #fff;
+}
+
+.btn-default {
+  background-color: #fff;
+  border-color: #fff;
+  color: #343434;
+  font-weight: bold;
+}
+
+.btn-default:hover,
+.btn-default:focus,
+.btn-default:active {
+  background-color: #d1d1d1;
+  border-color: #d1d1d1;
+  color: #343434;
+}
+
+.btn-full {
+  display: block;
+}
+
+.btn-disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.page-title {
+  font-family: "Mochiy Pop P One", sans-serif;
+  font-weight: normal;
+  letter-spacing: 1.5px;
+  margin-bottom: 15px;
+}
+
+.page-title a {
+  color: #fff;
+  text-decoration: none !important;
+}
+
+@media (max-width: 641px) {
+  .page-title {
+    font-size: 16px;
+  }
+}
+
+.form-item {
+  margin-bottom: 15px;
+}
+
+.form-item-info {
+  font-size: 12px;
+  display: block;
+  color: rgb(255, 255, 255, 0.6);
+}
+
+.form-item-horizontal label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.form-item-horizontal .form-input {
+  width: 100%;
+}
+
+.form-input {
+  padding: 5px;
+  border: 1px solid #d1d1d1;
+  border-radius: 4px;
+}
