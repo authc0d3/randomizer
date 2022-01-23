@@ -2,12 +2,16 @@
   import { Router, Link, Route } from "svelte-navigator";
   import { Header, Footer } from "./components";
   import { RollDice, RandomNumber, Raffle } from "./pages";
+
+  const getRoute = path => {
+    return `${process.env.isProd ? `${BASE_PATH}/` : ""}${path}`;
+  };
 </script>
 
-<Router>
+<Router basepath="/randomizer">
   <Header />
   <main class="container">
-    <Route path="randomizer">
+    <Route path="/">
       <p>
         ¡Bienvenid@ a Randomizer! Selecciona la herramienta que deseas utilizar:
       </p>
@@ -21,18 +25,18 @@
         <Link to="raffle" class="btn btn-default btn-full"
           >🏆 Realizar sorteo</Link
         >
-        <Link to="/randomizer" class="btn btn-default btn-full btn-disabled"
+        <Link to="/" class="btn btn-default btn-full btn-disabled"
           >👪 Generar grupos aleatorios (en desarrollo)</Link
         >
       </div>
     </Route>
-    <Route path="randomizer/roll-dice">
+    <Route path="roll-dice">
       <RollDice />
     </Route>
-    <Route path="randomizer/random-number">
+    <Route path="random-number">
       <RandomNumber />
     </Route>
-    <Route path="randomizer/raffle">
+    <Route path="raffle">
       <Raffle />
     </Route>
   </main>

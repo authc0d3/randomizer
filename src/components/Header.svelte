@@ -11,10 +11,10 @@
 
 <header>
   <div class="container">
-    <h1 class="logo"><Link to="/randomizer">🎲 Randomizer</Link></h1>
+    <h1 class="logo"><Link to="/">🎲 Randomizer</Link></h1>
     <nav>
-      {#if currentPath !== "randomizer" && width > 640}
-        <Link to="/randomizer" class="btn">🏠 Inicio</Link>
+      {#if currentPath !== "/" && width > 640}
+        <Link to="/" class="btn">🏠 Inicio</Link>
       {/if}
       <a href="https://programadorweb.dev" class="btn" target="_blank"
         >💬 Contacta</a
