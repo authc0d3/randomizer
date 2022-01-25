@@ -10,6 +10,8 @@ Install [NodeJS](https://nodejs.org/)\*\* (recomendada versión LTS) and run:
 > npm install && npm run dev
 ```
 
+Now you can view the app in the browser on: http://localhost:8080/randomizer
+
 ## 🚀 Build Project
 
 ```

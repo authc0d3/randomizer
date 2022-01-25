@@ -27,7 +27,7 @@
   header {
     position: sticky;
     padding: 10px 0px;
-    background-color: rgb(33, 51, 51);
+    background-color: #213333;
   }
 
   header .container {

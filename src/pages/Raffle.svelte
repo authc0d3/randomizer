@@ -38,7 +38,7 @@
       rows="5"
     />
     <span class="form-item-info"
-      >Escriba un participante por linea para agregar varios a la vez</span
+      >Escriba un participante por línea para agregar varios a la vez</span
     >
   </div>
   <button type="submit" class="btn btn-default">Añadir</button>
