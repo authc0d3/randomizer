@@ -147,9 +147,12 @@
 
   .congrats {
     background-image: url("../img/congrats.gif");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
     margin: 0 auto;
     height: 160px;
-    width: 400px;
+    width: 90%;
     max-width: 400px;
     border-radius: 10px;
   }
