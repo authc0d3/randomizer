@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&family=Roboto:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
 
 * {
   margin: 0;
@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: darkslategrey;
+  background-color: #373f49;
   color: #fff;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
@@ -47,8 +47,8 @@ body {
 .btn-default:hover,
 .btn-default:focus,
 .btn-default:active {
-  background-color: #d1d1d1;
-  border-color: #d1d1d1;
+  background-color: #e4e4e4;
+  border-color: #e4e4e4;
   color: #343434;
 }
 
@@ -62,9 +62,6 @@ body {
 }
 
 .page-title {
-  font-family: "Mochiy Pop P One", sans-serif;
-  font-weight: normal;
-  letter-spacing: 1.5px;
   margin-bottom: 15px;
 }
 

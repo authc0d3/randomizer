@@ -1,5 +1,12 @@
 <script>
   import { Router, Link, Route } from "svelte-navigator";
+  import Fa from "svelte-fa";
+  import {
+    faDice,
+    faRandom,
+    faTrophy,
+    faUsers
+  } from "@fortawesome/free-solid-svg-icons";
   import { Header, Footer } from "./components";
   import { RollDice, RandomNumber, Raffle, RandomGroups } from "./pages";
 </script>
@@ -13,16 +20,16 @@
       </p>
       <div class="tools">
         <Link to="roll-dice" class="btn btn-default btn-full"
-          >🎲 Tirar un dado</Link
+          ><Fa icon={faDice} color="orangered" /> Tirar un dado</Link
         >
         <Link to="random-number" class="btn btn-default btn-full"
-          >🔀 Generar número aleatorio</Link
+          ><Fa icon={faRandom} color="orangered" /> Generar número aleatorio</Link
         >
         <Link to="raffle" class="btn btn-default btn-full"
-          >🏆 Realizar sorteo</Link
+          ><Fa icon={faTrophy} color="orangered" /> Realizar sorteo</Link
         >
         <Link to="random-groups" class="btn btn-default btn-full"
-          >👪 Generar grupos aleatorios</Link
+          ><Fa icon={faUsers} color="orangered" /> Generar grupos aleatorios</Link
         >
       </div>
     </Route>

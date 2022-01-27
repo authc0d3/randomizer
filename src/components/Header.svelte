@@ -1,5 +1,7 @@
 <script>
   import { useLocation, Link } from "svelte-navigator";
+  import Fa from "svelte-fa";
+  import { faHome, faCommentDots } from "@fortawesome/free-solid-svg-icons";
 
   const location = useLocation();
   let width;
@@ -14,10 +16,12 @@
     <h1 class="logo"><Link to="/">🎲 Randomizer</Link></h1>
     <nav>
       {#if currentPath !== "/" && width > 640}
-        <Link to="/" class="btn">🏠 Inicio</Link>
+        <Link to="/" class="btn"
+          ><Fa icon={faHome} color="orangered" /> Inicio</Link
+        >
       {/if}
       <a href="https://programadorweb.dev" class="btn" target="_blank"
-        >💬 Contacta</a
+        ><Fa icon={faCommentDots} color="orangered" /> Contacta</a
       >
     </nav>
   </div>
@@ -27,7 +31,7 @@
   header {
     position: sticky;
     padding: 10px 0px;
-    background-color: #213333;
+    background-color: #1b1b1b;
   }
 
   header .container {
@@ -38,8 +42,8 @@
   }
 
   .logo {
-    font-family: "Mochiy Pop P One", sans-serif;
-    font-weight: normal;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
   }
 
   .logo > :global(a) {

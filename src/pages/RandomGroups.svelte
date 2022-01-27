@@ -1,4 +1,11 @@
 <script>
+  import Fa from "svelte-fa";
+  import {
+    faPlus,
+    faUsers,
+    faRandom,
+    faRedo
+  } from "@fortawesome/free-solid-svg-icons";
   import { PageTitle, Tag } from "../components";
   import { generateRandomNumber } from "../utils";
 
@@ -43,49 +50,62 @@
   };
 </script>
 
-<PageTitle>👪 Generar grupos aleatorios</PageTitle>
-<form class="form" on:submit={addItem}>
-  <div class="form-item">
-    <label for="numGroups">Nº de Grupos:</label>
-    <input
-      type="number"
-      min="2"
-      class="form-input"
-      name="numGroups"
-      bind:value={numGroups}
-      style="width: 60px;"
-    />
-  </div>
-  <div class="form-item form-item-horizontal">
-    <label for="competitor">Añadir elementos:</label>
-    <textarea
-      type="text"
-      bind:value={item}
-      class="form-input"
-      name="competitor"
-      rows="5"
-    />
-    <span class="form-item-info"
-      >Escriba un elemento por línea para agregar varios a la vez</span
-    >
-  </div>
-  <button type="submit" class="btn btn-default">Añadir</button>
-</form>
+<PageTitle
+  ><Fa icon={faUsers} color="orangered" /> Generar grupos aleatorios</PageTitle
+>
+{#if !groups.length}
+  <form class="form" on:submit={addItem}>
+    <div class="form-item">
+      <label for="numGroups">Nº de Grupos:</label>
+      <input
+        type="number"
+        min="2"
+        class="form-input"
+        name="numGroups"
+        bind:value={numGroups}
+        style="width: 60px;"
+      />
+    </div>
+    <div class="form-item form-item-horizontal">
+      <label for="competitor">Añadir integrantes:</label>
+      <textarea
+        type="text"
+        bind:value={item}
+        class="form-input"
+        name="competitor"
+        rows="5"
+      />
+      <span class="form-item-info"
+        >Escriba un integrante por línea para agregar varios a la vez</span
+      >
+    </div>
+    <button type="submit" class="btn btn-default">
+      <Fa icon={faPlus} color="orangered" />{" "}
+      Añadir
+    </button>
+  </form>
+{/if}
 {#if itemList.length > 0}
   <div class="items">
-    <h3>📦 Elementos a agrupar</h3>
+    <h3><Fa icon={faUsers} color="orangered" /> Integrantes</h3>
     <div class="item-list">
       {#each itemList as name, i}
-        <Tag id={i} text={name} on:close={handleRemoveItem} closable />
+        <Tag
+          id={i}
+          text={name}
+          on:close={handleRemoveItem}
+          closable={!groups.length}
+        />
       {/each}
     </div>
   </div>
-  {#if itemList.length >= numGroups}
+  {#if itemList.length >= numGroups && !groups.length}
     <div class="create-groups">
       <button
         class="btn btn-default"
         type="button"
-        on:click={handleCreateGroups}>¡Crear grupos al azar!</button
+        on:click={handleCreateGroups}
+        ><Fa icon={faRandom} color="orangered" /> ¡Crear grupos al azar!</button
       >
     </div>
   {/if}
@@ -104,12 +124,21 @@
         </div>
       {/each}
     </div>
+    <div class="redo">
+      <button
+        class="btn btn-default"
+        type="button"
+        on:click={() => (groups = [])}
+      >
+        <Fa icon={faRedo} color="orangered" /> Volver a sortear
+      </button>
+    </div>
   {/if}
 {/if}
 
 <style>
   .form {
-    margin-bottom: 30px;
+    margin: 35px 0 25px 0;
   }
 
   .form .form-item {
@@ -117,7 +146,8 @@
   }
 
   .items {
-    border: 2px solid #fff;
+    background-color: #fff;
+    color: #434343;
     border-radius: 10px;
     padding: 15px;
   }
@@ -147,6 +177,7 @@
     align-items: flex-start;
     gap: 3%;
     row-gap: 15px;
+    margin: 25px 0;
   }
 
   .group {
@@ -155,12 +186,12 @@
     color: #535353;
     border-radius: 5px;
     line-height: 1.4em;
-    border: 1px solid #213333;
+    overflow: hidden;
   }
 
   .group h4 {
     color: #fff;
-    background-color: #213333;
+    background-color: orangered;
     margin: 0;
     padding: 8px 12px;
   }
@@ -171,6 +202,10 @@
 
   .group .group-content ul {
     margin: 0 20px;
+  }
+
+  .redo {
+    text-align: center;
   }
 
   @media (max-width: 768px) {

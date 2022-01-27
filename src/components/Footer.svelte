@@ -3,25 +3,28 @@
 </script>
 
 <footer class="container">
-  &copy; {year} <a href="https://programadorweb.dev">Antonio González</a>
+  &copy; {year}
+  <a href="https://programadorweb.dev" target="_blank">Antonio González</a> ~
+  Made with <a href="https://svelte.dev/" target="_blank">Svelte</a>
 </footer>
 
 <style>
   footer {
-    border-top: 1px solid rgb(120, 143, 143);
-    color: rgb(120, 143, 143);
+    border-top: 1px solid #9c9c9c;
+    color: #9c9c9c;
     text-align: center;
     margin-top: 25px;
     padding: 10px 5px;
   }
 
   footer a {
-    color: rgb(120, 143, 143);
+    color: #9c9c9c;
     text-decoration: none;
   }
 
   footer a:hover,
   footer a:active {
+    color: orangered;
     text-decoration: underline;
   }
 </style>

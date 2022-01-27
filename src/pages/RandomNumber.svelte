@@ -1,4 +1,6 @@
 <script>
+  import Fa from "svelte-fa";
+  import { faRandom } from "@fortawesome/free-solid-svg-icons";
   import { PageTitle, LatestResults } from "../components";
   import { generateRandomNumber } from "../utils";
 
@@ -16,7 +18,9 @@
   };
 </script>
 
-<PageTitle>🔀 Generar número aleatorio</PageTitle>
+<PageTitle
+  ><Fa icon={faRandom} color="orangered" /> Generar número aleatorio</PageTitle
+>
 <div class="form">
   <div class="form-item">
     <label for="min">Mínimo:</label>
@@ -58,8 +62,10 @@
 
   .number {
     text-align: center;
-    font-size: 64px;
-    border: 1px solid #fff;
+    font-size: 72px;
+    font-weight: 700;
+    background-color: #fff;
+    color: orangered;
     border-radius: 4px;
     padding: 15px;
     margin-bottom: 25px;

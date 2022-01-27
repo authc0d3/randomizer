@@ -1,5 +1,7 @@
 <script>
   import { onMount } from "svelte";
+  import Fa from "svelte-fa";
+  import { faDice } from "@fortawesome/free-solid-svg-icons";
   import { generateRandomNumber } from "../utils";
   import { PageTitle, LatestResults } from "../components";
 
@@ -26,7 +28,7 @@
   });
 </script>
 
-<PageTitle>🎲 Tirar un dado</PageTitle>
+<PageTitle><Fa icon={faDice} color="orangered" /> Tirar un dado</PageTitle>
 <p class="dice-info">¡Haz click sobre el dado para lanzarlo!</p>
 <div class="dice" on:click={rollDice}>
   <ol class="face-list even-roll odd-roll" data-roll={side}>
@@ -119,7 +121,7 @@
   }
   .dot {
     align-self: center;
-    background-color: darkslategrey;
+    background-color: orangered;
     border-radius: 50%;
     box-shadow: inset -0.15rem 0.15rem 0.25rem rgba(0, 0, 0, 0.5);
     display: block;
