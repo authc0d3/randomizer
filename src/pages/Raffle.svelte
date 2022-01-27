@@ -146,7 +146,7 @@
   }
 
   .congrats {
-    background-image: url("/img/congrats.gif");
+    background-image: url("../img/congrats.gif");
     margin: 0 auto;
     height: 160px;
     width: 400px;
