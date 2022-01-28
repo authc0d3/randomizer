@@ -3,11 +3,10 @@
   import {
     faTrophy,
     faPlus,
-    faUsers,
     faRandom,
     faRedo
   } from "@fortawesome/free-solid-svg-icons";
-  import { PageTitle, Tag } from "../components";
+  import { PageTitle, TagsCard } from "../components";
   import { generateRandomNumber } from "../utils";
 
   let competitor = "";
@@ -57,19 +56,12 @@
   </form>
 {/if}
 {#if competitorList.length > 0}
-  <div class="competitors">
-    <h3><Fa icon={faUsers} color="orangered" /> Participantes</h3>
-    <div class="competitor-list">
-      {#each competitorList as name, i}
-        <Tag
-          id={i}
-          text={name}
-          on:close={handleRemoveCompetitor}
-          closable={!winner}
-        />
-      {/each}
-    </div>
-  </div>
+  <TagsCard
+    title="Participantes"
+    tags={competitorList}
+    onRemoveTag={handleRemoveCompetitor}
+    closable={!winner}
+  />
   {#if competitorList.length > 1 && !winner}
     <div class="raffle-button">
       <button class="btn btn-default" type="button" on:click={handleRaffle}
@@ -98,26 +90,6 @@
 <style>
   .form {
     margin: 35px 0 25px 0;
-  }
-
-  .competitors {
-    background-color: #fff;
-    color: #434343;
-    border-radius: 10px;
-    padding: 15px;
-  }
-
-  .competitors h3 {
-    margin: 0 0 25px 0;
-  }
-
-  .competitor-list {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 15px;
   }
 
   .raffle-button {

@@ -6,7 +6,7 @@
     faRandom,
     faRedo
   } from "@fortawesome/free-solid-svg-icons";
-  import { PageTitle, Tag } from "../components";
+  import { PageTitle, TagsCard } from "../components";
   import { generateRandomNumber } from "../utils";
 
   let item = "";
@@ -43,7 +43,6 @@
       const randomItem = _itemList[randomItemIndex];
       _itemList.splice(randomItemIndex, 1);
       const smallerGroupIndex = getSmallerGroupIndex(_groups);
-      console.log(smallerGroupIndex);
       _groups[smallerGroupIndex].push(randomItem);
     });
     groups = _groups;
@@ -86,19 +85,12 @@
   </form>
 {/if}
 {#if itemList.length > 0}
-  <div class="items">
-    <h3><Fa icon={faUsers} color="orangered" /> Integrantes</h3>
-    <div class="item-list">
-      {#each itemList as name, i}
-        <Tag
-          id={i}
-          text={name}
-          on:close={handleRemoveItem}
-          closable={!groups.length}
-        />
-      {/each}
-    </div>
-  </div>
+  <TagsCard
+    title="Integrantes"
+    tags={itemList}
+    onRemoveTag={handleRemoveItem}
+    closable={!groups.length}
+  />
   {#if itemList.length >= numGroups && !groups.length}
     <div class="create-groups">
       <button
@@ -142,26 +134,6 @@
   }
 
   .form .form-item {
-    margin-bottom: 15px;
-  }
-
-  .items {
-    background-color: #fff;
-    color: #434343;
-    border-radius: 10px;
-    padding: 15px;
-  }
-
-  .items h3 {
-    margin: 0 0 25px 0;
-  }
-
-  .item-list {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 8px;
     margin-bottom: 15px;
   }
 
