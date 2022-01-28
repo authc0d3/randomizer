@@ -1,7 +1,6 @@
 <script>
   import { createEventDispatcher } from "svelte";
-  import Fa from "svelte-fa";
-  import { faTimes } from "@fortawesome/free-solid-svg-icons";
+  import Icon from "./Icon.svelte";
 
   export let id;
   export let text;
@@ -18,7 +17,7 @@
   {text}
   {#if closable}
     <span class="close" on:click={close}>
-      <Fa icon={faTimes} />
+      <Icon name="times" />
     </span>
   {/if}
 </div>

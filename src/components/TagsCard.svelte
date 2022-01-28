@@ -1,8 +1,8 @@
 <script>
-  import Fa from "svelte-fa";
-  import { faUsers } from "@fortawesome/free-solid-svg-icons";
+  import Icon from "./Icon.svelte";
   import Tag from "./Tag.svelte";
 
+  export let icon;
   export let title;
   export let tags;
   export let closable;
@@ -10,7 +10,12 @@
 </script>
 
 <div class="tags-card">
-  <h3><Fa icon={faUsers} color="orangered" /> {title}</h3>
+  <h3>
+    {#if icon}
+      <Icon name="users" color="orangered" />{" "}
+    {/if}
+    {title}
+  </h3>
   <div class="tags-card-body">
     {#each tags as text, i}
       <Tag id={i} bind:text bind:closable on:close={onRemoveTag} />

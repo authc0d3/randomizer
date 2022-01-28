@@ -1,7 +1,5 @@
 <script>
-  import Fa from "svelte-fa";
-  import { faRandom } from "@fortawesome/free-solid-svg-icons";
-  import { PageTitle, LatestResults } from "../components";
+  import { PageTitle, LatestResults, Icon } from "../components";
   import { generateRandomNumber } from "../utils";
 
   let min = 1;
@@ -19,7 +17,7 @@
 </script>
 
 <PageTitle
-  ><Fa icon={faRandom} color="orangered" /> Generar número aleatorio</PageTitle
+  ><Icon name="random" color="orangered" /> Generar número aleatorio</PageTitle
 >
 <div class="form">
   <div class="form-item">
@@ -42,12 +40,15 @@
       name="max"
     />
   </div>
-  <button type="button" class="btn btn-default" on:click={generateNumber}
-    >¡Generar!</button
-  >
 </div>
 <div class="number">
   {#if randomNumber === undefined}?{:else}{randomNumber}{/if}
+</div>
+<div class="generate">
+  <button type="button" class="btn btn-default" on:click={generateNumber}>
+    <Icon name="random" color="orangered" />{" "}
+    ¡Generar!
+  </button>
 </div>
 <LatestResults results={latestRandomNumbers} />
 
@@ -56,8 +57,13 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    margin: 25px 0px;
+    gap: 15px;
+    margin: 25px 0;
+  }
+
+  .generate {
+    text-align: center;
+    margin: 25px 0;
   }
 
   .number {

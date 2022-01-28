@@ -1,11 +1,10 @@
 <script>
   import { Link } from "svelte-navigator";
-  import Fa from "svelte-fa";
-  import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+  import Icon from "./Icon.svelte";
 </script>
 
 <h2 class="page-title">
-  <Link to="/"><Fa icon={faArrowLeft} /></Link>
+  <Link to="/"><Icon name="arrow-left" /></Link>
   <slot />
 </h2>
 

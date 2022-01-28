@@ -1,12 +1,5 @@
 <script>
-  import Fa from "svelte-fa";
-  import {
-    faPlus,
-    faUsers,
-    faRandom,
-    faRedo
-  } from "@fortawesome/free-solid-svg-icons";
-  import { PageTitle, TagsCard } from "../components";
+  import { PageTitle, TagsCard, Icon } from "../components";
   import { generateRandomNumber } from "../utils";
 
   let item = "";
@@ -50,7 +43,7 @@
 </script>
 
 <PageTitle
-  ><Fa icon={faUsers} color="orangered" /> Generar grupos aleatorios</PageTitle
+  ><Icon name="users" color="orangered" /> Generar grupos aleatorios</PageTitle
 >
 {#if !groups.length}
   <form class="form" on:submit={addItem}>
@@ -79,7 +72,7 @@
       >
     </div>
     <button type="submit" class="btn btn-default">
-      <Fa icon={faPlus} color="orangered" />{" "}
+      <Icon name="plus" color="orangered" />{" "}
       Añadir
     </button>
   </form>
@@ -87,6 +80,7 @@
 {#if itemList.length > 0}
   <TagsCard
     title="Integrantes"
+    icon="users"
     tags={itemList}
     onRemoveTag={handleRemoveItem}
     closable={!groups.length}
@@ -97,7 +91,7 @@
         class="btn btn-default"
         type="button"
         on:click={handleCreateGroups}
-        ><Fa icon={faRandom} color="orangered" /> ¡Crear grupos al azar!</button
+        ><Icon name="random" color="orangered" /> ¡Crear grupos al azar!</button
       >
     </div>
   {/if}
@@ -122,7 +116,7 @@
         type="button"
         on:click={() => (groups = [])}
       >
-        <Fa icon={faRedo} color="orangered" /> Volver a sortear
+        <Icon name="redo" color="orangered" /> Volver a sortear
       </button>
     </div>
   {/if}

@@ -1,12 +1,5 @@
 <script>
-  import Fa from "svelte-fa";
-  import {
-    faTrophy,
-    faPlus,
-    faRandom,
-    faRedo
-  } from "@fortawesome/free-solid-svg-icons";
-  import { PageTitle, TagsCard } from "../components";
+  import { PageTitle, TagsCard, Icon } from "../components";
   import { generateRandomNumber } from "../utils";
 
   let competitor = "";
@@ -33,7 +26,7 @@
   };
 </script>
 
-<PageTitle><Fa icon={faTrophy} color="orangered" /> Realizar sorteo</PageTitle>
+<PageTitle><Icon name="trophy" color="orangered" /> Realizar sorteo</PageTitle>
 {#if !winner}
   <form class="form" on:submit={addCompetitor}>
     <div class="form-item form-item-horizontal">
@@ -50,7 +43,7 @@
       >
     </div>
     <button type="submit" class="btn btn-default">
-      <Fa icon={faPlus} color="orangered" />{" "}
+      <Icon name="plus" color="orangered" />{" "}
       Añadir
     </button>
   </form>
@@ -58,6 +51,7 @@
 {#if competitorList.length > 0}
   <TagsCard
     title="Participantes"
+    icon="users"
     tags={competitorList}
     onRemoveTag={handleRemoveCompetitor}
     closable={!winner}
@@ -65,14 +59,14 @@
   {#if competitorList.length > 1 && !winner}
     <div class="raffle-button">
       <button class="btn btn-default" type="button" on:click={handleRaffle}
-        ><Fa icon={faRandom} color="orangered" /> ¡Elegir un ganador!</button
+        ><Icon name="random" color="orangered" /> ¡Elegir un ganador!</button
       >
     </div>
   {/if}
   {#if winner}
     <div class="winner">
       <h3>Y el ganador es...</h3>
-      <h1><Fa icon={faTrophy} color="orangered" /> {winner}</h1>
+      <h1><Icon name="trophy" color="orangered" /> {winner}</h1>
       <div class="congrats" />
     </div>
     <div class="redo">
@@ -81,7 +75,7 @@
         type="button"
         on:click={() => (winner = undefined)}
       >
-        <Fa icon={faRedo} color="orangered" /> Volver a sortear
+        <Icon name="redo" color="orangered" /> Volver a sortear
       </button>
     </div>
   {/if}

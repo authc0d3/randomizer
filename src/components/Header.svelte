@@ -1,7 +1,6 @@
 <script>
   import { useLocation, Link } from "svelte-navigator";
-  import Fa from "svelte-fa";
-  import { faHome, faCommentDots } from "@fortawesome/free-solid-svg-icons";
+  import Icon from "./Icon.svelte";
 
   const location = useLocation();
   let width;
@@ -17,11 +16,11 @@
     <nav>
       {#if currentPath !== "/" && width > 640}
         <Link to="/" class="btn"
-          ><Fa icon={faHome} color="orangered" /> Inicio</Link
+          ><Icon name="home" color="orangered" /> Inicio</Link
         >
       {/if}
       <a href="https://programadorweb.dev" class="btn" target="_blank"
-        ><Fa icon={faCommentDots} color="orangered" /> Contacta</a
+        ><Icon name="comment-dots" color="orangered" /> Contacta</a
       >
     </nav>
   </div>
